@@ -11,6 +11,9 @@ app.use(express.json());
 const snsClient = new SNSClient({ region: process.env.AWS_REGION || "us-east-1" });
 
 // Endpoint wajib untuk Target Group Health Check (Application Load Balancer)
+app.get("/", (req, res) => {
+  res.send("SMK BISA Hub backend running");
+});
 app.get('/health', (req, res) => {
     res.status(200).json({ status: 'Healthy', message: 'lks-app-node is running' });
 });
