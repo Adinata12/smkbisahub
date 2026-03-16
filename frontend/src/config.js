@@ -7,4 +7,4 @@
 
 export const API_URL =
   process.env.REACT_APP_API_URL ||
-  "//lks-alb-802691516.us-east-1.elb.amazonaws.com";
+  "http://lks-alb-802691516.us-east-1.elb.amazonaws.com";
