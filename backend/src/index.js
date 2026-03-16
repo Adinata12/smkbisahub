@@ -17,6 +17,9 @@ app.get("/", (req, res) => {
 app.get('/health', (req, res) => {
     res.status(200).json({ status: 'Healthy', message: 'lks-app-node is running' });
 });
+app.get('/api/health', (req, res) => {
+  res.status(200).json({ status: "ok" });
+});
 
 // Endpoint untuk testing koneksi Database
 app.get('/api/test-db', async (req, res) => {
