@@ -5,4 +5,6 @@
  * Nilainya adalah DNS Name dari Application Load Balancer (ALB) Anda (http://lks-alb-xxx.elb.amazonaws.com)
  */
 
-export const API_URL = process.env.REACT_APP_API_URL || '';
+export const API_URL =
+  process.env.REACT_APP_API_URL ||
+  "//lks-alb-802691516.us-east-1.elb.amazonaws.com";
