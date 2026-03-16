@@ -9,9 +9,15 @@ function App() {
 
   // Mengecek apakah ALB dan EC2 Backend berjalan (Target Group Health Check)
   useEffect(() => {
-    axios.get(`${API_URL}/health`)
-      .then(res => setHealth(res.data.status))
-      .catch(err => setHealth('Disconnected / 502 Bad Gateway'));
+axios.get(`${API_URL}/api/health`)
+  .then(res => {
+    if(res.data.status === "ok"){
+      setHealth("Healthy");
+    } else {
+      setHealth("Unhealthy");
+    }
+  })
+  .catch(() => setHealth("Disconnected / 502 Bad Gateway"));
   }, []);
 
   const handleChange = (e) => {
